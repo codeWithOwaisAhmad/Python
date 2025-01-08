@@ -40,7 +40,7 @@ Getting Started 🚀
 Clone the Repository:
 
 bash
-git clone https://github.com/yourusername/python-code-series.git
+git clone https://github.com/codeWithOwaisAhmad/Python.git
 Navigate to the Directory:
 
 bash
