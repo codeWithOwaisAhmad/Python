@@ -72,6 +72,9 @@ for student, score in student_scores.items():
 3. The 'student' variable takes the value of the current key, and 'score' takes the value of the current value.
 4. We print the student name and their score in each iteration using an f-string.
 """
+# The Following Loop is a Multiplication Table of 10 
+for i in range(11):
+    print(f"10 x {i} = {10 * i}")
 
 # Conclusion
 """
