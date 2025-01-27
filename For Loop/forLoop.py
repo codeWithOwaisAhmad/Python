@@ -75,7 +75,15 @@ for student, score in student_scores.items():
 # The Following Loop is a Multiplication Table of 10 
 for i in range(11):
     print(f"10 x {i} = {10 * i}")
-
+#Iterating in the List Using For Loop
+# 1)Method
+sample_list = [31,23,45,24,12,68,97]
+for i in range(len(sample_list))
+   print(i)
+# 2)Method
+sample_list = [31,23,45,24,12,68,97]
+for i in sample_list:
+   print(sample_list[i])
 # Conclusion
 """
 In this tutorial, we covered the basics of the 'for' loop in Python with three examples of increasing difficulty. We learned how to iterate over a list, a string, and a dictionary using a 'for' loop. Understanding loops is fundamental for programming, and the 'for' loop is a versatile tool for iterating over sequences in Python.
