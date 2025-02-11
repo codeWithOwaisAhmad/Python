@@ -1,75 +1,60 @@
-# Tutorial: Basics of Python - Datatypes
+# Python Data Types Explained with Examples
 
-# Datatypes in Python
-# Python supports several built-in datatypes, including:
-# - Numbers (integers, floats, complex)
-# - Strings
-# - Lists
-# - Tuples
-# - Sets
-# - Dictionaries
-# - Booleans
+# 1. Numeric Data Types
+# - int: Whole numbers
+# - float: Decimal numbers
+# - complex: Complex numbers
 
-# 1. Numbers
-# Numbers in Python can be integers, floats, or complex numbers.
+# Integer Example
+num_int = 10
+print(f'Integer: {num_int}, Type: {type(num_int)}')
 
-# Integer
-x = 10
-print("Integer x:", x)
+# Float Example
+num_float = 10.5
+print(f'Float: {num_float}, Type: {type(num_float)}')
 
-# Float
-y = 3.14
-print("Float y:", y)
+# Complex Example
+num_complex = 2 + 3j
+print(f'Complex: {num_complex}, Type: {type(num_complex)}')
 
-# Complex Number
-z = complex(2, 3)  # 2 + 3j
-print("Complex Number z:", z)
+# 2. String Data Type
+# - Strings are sequences of characters
+text = "Hello, Python!"
+print(f'String: {text}, Type: {type(text)}')
 
-# 2. Strings
-# Strings are sequences of characters.
+# 3. Boolean Data Type
+# - Used to represent True or False values
+is_python_fun = True
+print(f'Boolean: {is_python_fun}, Type: {type(is_python_fun)}')
 
-# String Assignment
-greeting = "Hello, World!"
-print("Greeting:", greeting)
+# 4. Sequence Data Types
+# - list: Ordered, mutable collection
+# - tuple: Ordered, immutable collection
+# - range: Represents an immutable sequence of numbers
 
-# String with Special Characters
-phrase = "Python programming"
-print("Phrase:", phrase)
+# List Example
+my_list = [1, 2, 3, "Python"]
+print(f'List: {my_list}, Type: {type(my_list)}')
 
-# 3. Lists
-# Lists are ordered collections of items.
+# Tuple Example
+my_tuple = (1, 2, 3, "Python")
+print(f'Tuple: {my_tuple}, Type: {type(my_tuple)}')
 
-# Creating a List
-fruits = ["apple", "banana", "cherry"]
-print("Fruits:", fruits)
+# Range Example
+my_range = range(5)  # Generates numbers from 0 to 4
+print(f'Range: {list(my_range)}, Type: {type(my_range)}')
 
-# 4. Tuples
-# Tuples are ordered collections of items that are immutable.
+# 5. Set Data Type
+# - Unordered collection of unique elements
+my_set = {1, 2, 3, 3, 4}
+print(f'Set: {my_set}, Type: {type(my_set)}')
 
-# Creating a Tuple
-coordinates = (10, 20)
-print("Coordinates:", coordinates)
+# 6. Dictionary Data Type
+# - Stores key-value pairs
+my_dict = {"name": "Alice", "age": 25}
+print(f'Dictionary: {my_dict}, Type: {type(my_dict)}')
 
-# 5. Sets
-# Sets are unordered collections of unique items.
-
-# Creating a Set
-unique_numbers = {1, 2, 3, 4, 5}
-print("Unique Numbers:", unique_numbers)
-
-# 6. Dictionaries
-# Dictionaries are collections of key-value pairs.
-
-# Creating a Dictionary
-student = {"name": "Alice", "age": 25, "city": "New York"}
-print("Student:", student)
-
-# 7. Booleans
-# Booleans represent True or False values.
-
-# Boolean Values
-is_active = True
-print("Is Active:", is_active)
-
-is_logged_in = False
-print("Is Logged In:", is_logged_in)
+# 7. NoneType
+# - Represents the absence of a value
+my_none = None
+print(f'NoneType: {my_none}, Type: {type(my_none)}')
