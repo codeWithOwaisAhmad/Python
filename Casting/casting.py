@@ -1,43 +1,54 @@
-### Python Casting Tutorial
-# This script provides examples and explanations for casting in Python.
+# Python Casting Explained for Beginners
 
-# Easy Example: Casting an Integer to a String
-print("\n--- Easy Example ---")
-num = 10  # Integer
-print("Before casting:", type(num))  # Check type before casting
+# Casting means converting one data type into another.
+# Python provides built-in functions for casting: int(), float(), str(), and more.
 
-# Casting integer to string
-num_str = str(num)
-print("After casting:", type(num_str))  # Check type after casting
+# Example 1: Converting a string to an integer
+num_str = "10"  # This is a string
+to_int = int(num_str)  # Converts string to integer
+print("String to Integer:", to_int, "| Type:", type(to_int))
 
-# Output the result
-print("The number as a string is:", num_str)
+# Example 2: Converting a string to a float
+num_str2 = "10.5"
+to_float = float(num_str2)  # Converts string to float
+print("String to Float:", to_float, "| Type:", type(to_float))
 
-# Medium Example: Converting a List of Strings to Integers
-print("\n--- Medium Example ---")
-str_numbers = ["1", "2", "3", "4"]  # List of strings
-print("Before casting:", [type(x) for x in str_numbers])  # Check types
+# Example 3: Converting an integer to a string
+num = 25
+to_str = str(num)  # Converts integer to string
+print("Integer to String:", to_str, "| Type:", type(to_str))
 
-# Casting each string to an integer
-int_numbers = [int(x) for x in str_numbers]
-print("After casting:", [type(x) for x in int_numbers])  # Check types
+# Example 4: Converting a float to an integer (note: this removes decimal part)
+num_float = 9.99
+to_int_from_float = int(num_float)  # Converts float to integer
+print("Float to Integer:", to_int_from_float, "| Type:", type(to_int_from_float))
 
-# Output the converted list
-print("The list of integers is:", int_numbers)
+# Example 5: Converting an integer to a float
+num2 = 7
+to_float_from_int = float(num2)  # Converts integer to float
+print("Integer to Float:", to_float_from_int, "| Type:", type(to_float_from_int))
 
-# Hard Example: Handling Mixed Data Types for Casting
-print("\n--- Hard Example ---")
-data = ["42", 3.14, "7.5", 15, "hello"]  # Mixed list of strings, floats, integers, and a non-numeric string
-int_list = []  # To store integers after casting
+# Example 6: Converting a list of numbers (as strings) into integers using map()
+num_list = ["1", "2", "3", "4"]
+to_int_list = list(map(int, num_list))  # Converts each string to an integer
+print("List of Strings to List of Integers:", to_int_list, "| Type:", type(to_int_list))
 
-for item in data:
-    try:
-        # Attempt to cast item to integer
-        int_value = int(float(item))  # Convert to float first if it's a string with decimals, then to integer
-        int_list.append(int_value)
-    except ValueError:
-        # Handle non-numeric strings gracefully
-        print(f"Cannot cast '{item}' to an integer.")
+# Example 7: Converting a boolean to an integer
+true_val = True
+false_val = False
+print("Boolean True to Integer:", int(true_val))  # 1
+print("Boolean False to Integer:", int(false_val))  # 0
 
-# Output the valid integers
-print("The list of valid integers is:", int_list)
+# Example 8: Converting an integer to a boolean
+zero = 0
+non_zero = 5
+print("Integer 0 to Boolean:", bool(zero))  # False
+print("Non-zero Integer to Boolean:", bool(non_zero))  # True
+
+# Example 9: Converting a list to a string
+char_list = ['H', 'e', 'l', 'l', 'o']
+to_string = ''.join(char_list)  # Joins list elements into a single string
+print("List to String:", to_string)
+
+# Python casting is useful when handling different data types in programs.
+# Try modifying the values and observe how they change!
