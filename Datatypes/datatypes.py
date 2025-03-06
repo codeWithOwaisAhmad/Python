@@ -1,60 +1,49 @@
-# Python Data Types Explained with Examples
+# Python Datatypes Explained for Beginners
 
-# 1. Numeric Data Types
-# - int: Whole numbers
-# - float: Decimal numbers
-# - complex: Complex numbers
+# In Python, a datatype defines the type of value a variable can hold.
+# Python has several built-in datatypes.
 
-# Integer Example
-num_int = 10
-print(f'Integer: {num_int}, Type: {type(num_int)}')
+# Example 1: Integer (int)
+num_int = 10  # Whole number, positive or negative
+print("Integer:", num_int, "| Type:", type(num_int))
 
-# Float Example
-num_float = 10.5
-print(f'Float: {num_float}, Type: {type(num_float)}')
+# Example 2: Floating-point number (float)
+num_float = 10.5  # Number with a decimal point
+print("Float:", num_float, "| Type:", type(num_float))
 
-# Complex Example
-num_complex = 2 + 3j
-print(f'Complex: {num_complex}, Type: {type(num_complex)}')
+# Example 3: String (str)
+text = "Hello, Python!"  # Sequence of characters
+print("String:", text, "| Type:", type(text))
 
-# 2. String Data Type
-# - Strings are sequences of characters
-text = "Hello, Python!"
-print(f'String: {text}, Type: {type(text)}')
+# Example 4: Boolean (bool)
+is_python_fun = True  # Can be True or False
+print("Boolean:", is_python_fun, "| Type:", type(is_python_fun))
 
-# 3. Boolean Data Type
-# - Used to represent True or False values
-is_python_fun = True
-print(f'Boolean: {is_python_fun}, Type: {type(is_python_fun)}')
+# Example 5: List (list)
+numbers_list = [1, 2, 3, 4, 5]  # Ordered collection, mutable
+print("List:", numbers_list, "| Type:", type(numbers_list))
 
-# 4. Sequence Data Types
-# - list: Ordered, mutable collection
-# - tuple: Ordered, immutable collection
-# - range: Represents an immutable sequence of numbers
+# Example 6: Tuple (tuple)
+numbers_tuple = (1, 2, 3, 4, 5)  # Ordered collection, immutable
+print("Tuple:", numbers_tuple, "| Type:", type(numbers_tuple))
 
-# List Example
-my_list = [1, 2, 3, "Python"]
-print(f'List: {my_list}, Type: {type(my_list)}')
+# Example 7: Set (set)
+numbers_set = {1, 2, 3, 4, 5}  # Unordered collection, unique elements
+print("Set:", numbers_set, "| Type:", type(numbers_set))
 
-# Tuple Example
-my_tuple = (1, 2, 3, "Python")
-print(f'Tuple: {my_tuple}, Type: {type(my_tuple)}')
+# Example 8: Dictionary (dict)
+person = {"name": "Alice", "age": 25, "city": "New York"}  # Key-value pairs
+print("Dictionary:", person, "| Type:", type(person))
 
-# Range Example
-my_range = range(5)  # Generates numbers from 0 to 4
-print(f'Range: {list(my_range)}, Type: {type(my_range)}')
+# Example 9: NoneType (None)
+nothing = None  # Represents absence of a value
+print("NoneType:", nothing, "| Type:", type(nothing))
 
-# 5. Set Data Type
-# - Unordered collection of unique elements
-my_set = {1, 2, 3, 3, 4}
-print(f'Set: {my_set}, Type: {type(my_set)}')
+# Example 10: Complex Number (complex)
+num_complex = 3 + 4j  # Complex number with real and imaginary parts
+print("Complex Number:", num_complex, "| Type:", type(num_complex))
 
-# 6. Dictionary Data Type
-# - Stores key-value pairs
-my_dict = {"name": "Alice", "age": 25}
-print(f'Dictionary: {my_dict}, Type: {type(my_dict)}')
+# Python automatically detects datatypes based on assigned values.
+# You can use the type() function to check the datatype of any variable.
 
-# 7. NoneType
-# - Represents the absence of a value
-my_none = None
-print(f'NoneType: {my_none}, Type: {type(my_none)}')
+# Try modifying the values and observe how Python handles different datatypes!
