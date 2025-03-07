@@ -1,119 +1,56 @@
-"""
-Tutorial: Basics of Python Dictionaries
+# Python Dictionaries Explained for Beginners
 
-Dictionaries in Python are a collection of key-value pairs. Each key is unique, and the values can be of any data type. 
-Dictionaries are also mutable, meaning you can change their content without changing their identity.
-"""
+# A dictionary in Python is a collection of key-value pairs.
+# It is unordered, mutable, and does not allow duplicate keys.
 
-# Easy Example: Creating and Accessing a Dictionary
+# Example 1: Creating a dictionary
+person = {"name": "Alice", "age": 25, "city": "New York"}
+print("Dictionary:", person)
+print("Type:", type(person))
 
-# Step-by-step Explanation:
-# 1. We create a dictionary with three key-value pairs.
-# 2. We access the value associated with the key 'name'.
-# 3. We add a new key-value pair to the dictionary.
-# 4. We update the value of an existing key.
+# Example 2: Accessing values using keys
+print("Name:", person["name"])  # Access value by key
+print("Age:", person.get("age"))  # Using get() method
 
-# Creating a dictionary
-person = {
-    "name": "Owais",
-    "age": 25,
-    "city": "New York"
-}
-
-# Accessing a value by key
-print("Name:", person["name"])  # Output: Name: Owais
-
-# Adding a new key-value pair
-person["email"] = "owais@example.com"
+# Example 3: Adding a new key-value pair
+person["job"] = "Engineer"
 print("Updated Dictionary:", person)
-# Output: Updated Dictionary: {'name': 'Owais', 'age': 25, 'city': 'New York', 'email': 'owais@example.com'}
 
-# Updating an existing value
-person["age"] = 26
-print("Updated Age:", person["age"])  # Output: Updated Age: 26
+# Example 4: Modifying an existing value
+person["age"] = 26  # Update value of a key
+print("Modified Dictionary:", person)
 
+# Example 5: Removing a key-value pair
+del person["city"]  # Using del keyword
+print("Dictionary after deletion:", person)
 
-# Medium Example: Iterating Over a Dictionary
+# Example 6: Looping through a dictionary
+print("Dictionary Keys:")
+for key in person:
+    print(key)  # Prints only keys
 
-# Step-by-step Explanation:
-# 1. We create a dictionary representing a book.
-# 2. We iterate over the dictionary to print each key-value pair.
-# 3. We use the items() method to get key-value pairs as tuples.
+print("Dictionary Values:")
+for value in person.values():
+    print(value)  # Prints only values
 
-# Creating a dictionary
-book = {
-    "title": "Python Programming",
-    "author": "John Doe",
-    "year": 2021
-}
+print("Dictionary Items:")
+for key, value in person.items():
+    print(key, ":", value)  # Prints key-value pairs
 
-# Iterating over the dictionary
-for key, value in book.items():
-    print(f"{key}: {value}")
-# Output:
-# title: Python Programming
-# author: John Doe
-# year: 2021
+# Example 7: Checking if a key exists
+if "name" in person:
+    print("Key 'name' exists in dictionary")
 
+# Example 8: Dictionary length
+print("Number of key-value pairs:", len(person))
 
-# Hard Example: Nested Dictionaries and Complex Operations
+# Example 9: Copying a dictionary
+person_copy = person.copy()
+print("Copied Dictionary:", person_copy)
 
-# Step-by-step Explanation:
-# 1. We create a nested dictionary representing a library with multiple books.
-# 2. We iterate over the nested dictionary to print details of each book.
-# 3. We demonstrate adding a new book to the library.
+# Example 10: Clearing all elements from dictionary
+person.clear()
+print("Cleared Dictionary:", person)
 
-# Creating a nested dictionary
-library = {
-    "book1": {
-        "title": "Python Basics",
-        "author": "Jane Smith",
-        "year": 2020
-    },
-    "book2": {
-        "title": "Advanced Python",
-        "author": "James Brown",
-        "year": 2019
-    }
-}
-
-# Iterating over the nested dictionary
-for book_id, book_info in library.items():
-    print(f"Book ID: {book_id}")
-    for key, value in book_info.items():
-        print(f"  {key}: {value}")
-# Output:
-# Book ID: book1
-#   title: Python Basics
-#   author: Jane Smith
-#   year: 2020
-# Book ID: book2
-#   title: Advanced Python
-#   author: James Brown
-#   year: 2019
-
-# Adding a new book to the library
-library["book3"] = {
-    "title": "Python Data Science",
-    "author": "Emily Davis",
-    "year": 2022
-}
-print("\nUpdated Library:")
-for book_id, book_info in library.items():
-    print(f"Book ID: {book_id}")
-    for key, value in book_info.items():
-        print(f"  {key}: {value}")
-# Output:
-# Updated Library:
-# Book ID: book1
-#   title: Python Basics
-#   author: Jane Smith
-#   year: 2020
-# Book ID: book2
-#   title: Advanced Python
-#   author: James Brown
-#   year: 2019
-# Book ID: book3
-#   title: Python Data Science
-#   author: Emily Davis
-#   year: 2022
+# Dictionaries are powerful data structures used in Python for efficient data management.
+# Try modifying the dictionary and experiment with different methods!
