@@ -1,110 +1,50 @@
-# exception_handling_examples.py
+# Python Exception Handling Explained for Beginners
 
-"""
-Exception Handling in Python: From Basic to Advanced
+# Exception handling in Python allows us to handle runtime errors gracefully.
+# The 'try' block lets us test a block of code for errors.
+# The 'except' block handles the error if it occurs.
 
-Exception handling in Python is a mechanism that allows you to handle errors gracefully,
-ensuring that your program can continue running or terminate cleanly when an error occurs.
-This is crucial for building robust and reliable applications.
-"""
+# Example 1: Basic try-except block
+try:
+    x = 10 / 0  # This will cause a ZeroDivisionError
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
 
-# Basic Concepts
+# Example 2: Handling multiple exceptions
+try:
+    num = int("abc")  # This will cause a ValueError
+except ValueError:
+    print("Error: Cannot convert string to integer.")
+except TypeError:
+    print("Error: Type mismatch occurred.")
 
-"""
-1. Exception: An error that disrupts the normal flow of the program.
-2. Try Block: The code that might throw an exception is placed inside a `try` block.
-3. Except Block: The code that handles the exception is placed inside an `except` block.
-4. Finally Block: This block contains code that will run no matter what, whether an exception was raised or not.
-"""
+# Example 3: Using a generic exception
+try:
+    my_list = [1, 2, 3]
+    print(my_list[5])  # Index out of range error
+except Exception as e:
+    print("An error occurred:", e)
 
-# Basic Example
+# Example 4: Using finally block (executes no matter what)
+try:
+    f = open("sample.txt", "r")
+    content = f.read()
+    print(content)
+except FileNotFoundError:
+    print("Error: File not found.")
+finally:
+    print("Execution completed.")
 
-def basic_example():
-    try:
-        # Code that may raise an exception
-        result = 10 / 0
-    except ZeroDivisionError:
-        # Code to handle the exception
-        print("Cannot divide by zero!")
-    finally:
-        # Code that will always execute
-        print("Execution completed.")
+# Example 5: Raising custom exceptions
+def check_age(age):
+    if age < 18:
+        raise ValueError("Age must be 18 or above.")
+    return "Access granted."
 
-# Call the basic example function
-basic_example()
+try:
+    print(check_age(15))  # Will raise an exception
+except ValueError as e:
+    print("Custom Exception:", e)
 
-"""
-Explanation:
-1. Try Block: The `try` block contains the code that may raise an exception. In this case, dividing by zero will raise a `ZeroDivisionError`.
-2. Except Block: The `except` block handles the exception. If a `ZeroDivisionError` is raised, the message "Cannot divide by zero!" is printed.
-3. Finally Block: The `finally` block contains code that will run regardless of whether an exception was raised or not. Here, it prints "Execution completed."
-"""
-
-# Advanced Concepts
-
-"""
-1. Multiple Except Blocks: You can have multiple `except` blocks to handle different exceptions.
-2. Exception Hierarchy: Handle exceptions in a specific-to-general order.
-3. Custom Exceptions: Define your own exceptions for specific use cases.
-4. Raising Exceptions: Manually raise exceptions using the `raise` keyword.
-"""
-
-# Multiple Except Blocks Example
-
-def multiple_except_blocks_example():
-    try:
-        # Code that may raise different exceptions
-        value = int(input("Enter a number: "))
-        result = 10 / value
-    except ValueError:
-        print("Invalid input! Please enter a valid number.")
-    except ZeroDivisionError:
-        print("Cannot divide by zero!")
-    finally:
-        print("Execution completed.")
-
-# Call the multiple except blocks example function
-# Uncomment the line below to test the function
-# multiple_except_blocks_example()
-
-# Custom Exceptions Example
-
-class CustomError(Exception):
-    """Custom Exception"""
-    pass
-
-def custom_exceptions_example():
-    try:
-        raise CustomError("This is a custom error.")
-    except CustomError as e:
-        print(e)
-    finally:
-        print("Execution completed.")
-
-# Call the custom exceptions example function
-custom_exceptions_example()
-
-# Raising Exceptions Example
-
-def check_positive(number):
-    if number < 0:
-        raise ValueError("Negative value entered!")
-    return number
-
-def raising_exceptions_example():
-    try:
-        value = check_positive(-10)
-    except ValueError as e:
-        print(e)
-    finally:
-        print("Execution completed.")
-
-# Call the raising exceptions example function
-raising_exceptions_example()
-
-"""
-Conclusion:
-Exception handling is a powerful feature in Python that helps you manage errors gracefully. By using `try`, `except`, and `finally` blocks,
-you can ensure that your program can handle different types of errors and continue running or terminate gracefully.
-Custom exceptions and raising exceptions manually provide additional flexibility to handle specific scenarios.
-"""
+# Exception handling is crucial for writing robust and error-free programs.
+# Try modifying the code to explore different exceptions!
