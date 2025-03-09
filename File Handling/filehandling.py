@@ -1,64 +1,41 @@
-# Detailed Explanation of File Handling in Python
+# Python File Handling Explained for Beginners
 
-# 1. Introduction to File Handling
-# File handling allows you to read and write files, which is essential for working with data.
+# File handling in Python allows us to create, read, write, and delete files.
+# The built-in 'open()' function is used for this purpose.
 
-# 2. Opening a File
-file = open('example.txt', 'r')  # Open file for reading
+# Example 1: Writing to a file
+with open("example.txt", "w") as file:
+    file.write("Hello, this is a sample file.\n")
+    file.write("Python makes file handling easy!\n")
+print("File written successfully.")
 
-# 3. Reading from a File
-file = open('example.txt', 'r')
-content = file.read()
-print(content)
-file.close()
-
-# 4. Writing to a File
-file = open('example.txt', 'w')
-file.write('Hello, World!\n')
-file.close()
-
-# 5. Closing a File
-file = open('example.txt', 'r')
-file.close()
-
-# 6. Using `with` Statement
-with open('example.txt', 'r') as file:
+# Example 2: Reading from a file
+with open("example.txt", "r") as file:
     content = file.read()
-    print(content)
+    print("File Content:\n", content)
 
-# 7. File Modes
-# 'r': Read
-# 'w': Write (truncate)
-# 'x': Create (fails if exists)
-# 'a': Append
-# 'b': Binary
-# 't': Text
-# '+': Read and write
+# Example 3: Appending to a file
+with open("example.txt", "a") as file:
+    file.write("This is an appended line.\n")
+print("Content appended successfully.")
 
-# 8. Handling Exceptions
-try:
-    file = open('example.txt', 'r')
-    content = file.read()
-except FileNotFoundError:
-    print('File not found.')
-finally:
-    file.close()
+# Example 4: Reading file line by line
+with open("example.txt", "r") as file:
+    for line in file:
+        print("Line:", line.strip())  # strip() removes extra newline characters
 
-# 9. Reading and Writing Binary Files
-# Writing binary data
-with open('example.bin', 'wb') as file:
-    file.write(b'\x00\x01\x02')
+# Example 5: Checking if a file exists before reading
+import os
+if os.path.exists("example.txt"):
+    with open("example.txt", "r") as file:
+        print("File exists, reading content:")
+        print(file.read())
+else:
+    print("File does not exist.")
 
-# Reading binary data
-with open('example.bin', 'rb') as file:
-    data = file.read()
-    print(data)
+# Example 6: Deleting a file
+os.remove("example.txt")
+print("File deleted successfully.")
 
-# 10. File Object Methods
-# file.read(size): Reads up to `size` bytes
-# file.readline(): Reads a single line
-# file.readlines(): Reads all lines into a list
-# file.write(string): Writes a string to the file
-# file.writelines(list): Writes a list of strings to the file
-# file.seek(offset): Moves the file pointer to `offset`
-# file.tell(): Returns the current file pointer position
+# File handling is crucial for storing and managing data in applications.
+# Try modifying the code and working with different file operations!
