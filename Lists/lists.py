@@ -1,89 +1,68 @@
-# Python List Tutorial
-# ====================
-# This tutorial covers the basics of Python lists with examples ranging from easy to hard.
+# Python Lists Explained for Beginners
 
-# 1. Introduction to Lists
-# Lists are ordered collections of items, which can be of different data types.
-# Lists are created using square brackets, and items are separated by commas.
+# Lists are one of the most versatile data types in Python.
+# They are used to store multiple items in a single variable.
+# Lists are created using square brackets [] and can hold different data types.
 
-# Example: Creating and Accessing Lists
-def introduction_to_lists():
-    # Create a list of fruits
-    fruits = ["apple", "banana", "cherry"]
+# Example 1: Creating a list
+fruits = ["apple", "banana", "cherry"]
+print("Fruits List:", fruits)
 
-    # Accessing elements in the list using indices (0-based indexing)
-    first_fruit = fruits[0]
-    second_fruit = fruits[1]
-    third_fruit = fruits[2]
+# Example 2: Accessing list items using index
+print("First Fruit:", fruits[0])
+print("Last Fruit:", fruits[-1])
 
-    # Output the elements
-    print(f"The first fruit is: {first_fruit}")
-    print(f"The second fruit is: {second_fruit}")
-    print(f"The third fruit is: {third_fruit}")
+# Example 3: Changing list items
+fruits[1] = "orange"
+print("Updated Fruits List:", fruits)
 
-# 2. Basic Operations on Lists
-def basic_operations():
-    # Create a list of fruits
-    fruits = ["apple", "banana", "cherry"]
+# Example 4: Looping through a list
+for fruit in fruits:
+    print("Fruit:", fruit)
 
-    # Add elements to the list
-    fruits.append("date")  # Adds an element to the end of the list
-    fruits.insert(1, "apricot")  # Inserts an element at a specific position
+# Example 5: Checking if an item exists
+if "apple" in fruits:
+    print("Apple is in the list!")
 
-    # Remove elements from the list
-    fruits.remove("banana")  # Removes the first occurrence of the specified element
-    popped_fruit = fruits.pop(2)  # Removes and returns the element at the specified index
+# Example 6: Adding items to a list
+fruits.append("mango")  # Adds at the end
+print("List after append:", fruits)
 
-    # Output the modified list and the removed element
-    print(f"Modified list of fruits: {fruits}")
-    print(f"Removed fruit: {popped_fruit}")
+fruits.insert(1, "kiwi")  # Adds at specific position
+print("List after insert:", fruits)
 
-# 3. Intermediate Operations on Lists
-def intermediate_operations():
-    # Create a list of fruits
-    fruits = ["apple", "banana", "cherry", "date", "elderberry"]
+# Example 7: Removing items from a list
+fruits.remove("banana")  # Removes the first occurrence
+print("List after removal:", fruits)
 
-    # Slicing lists
-    first_three_fruits = fruits[:3]  # Get the first three elements
-    last_two_fruits = fruits[-2:]  # Get the last two elements
+popped_fruit = fruits.pop()  # Removes the last item
+print("Popped Fruit:", popped_fruit)
+print("List after pop:", fruits)
 
-    # List comprehension
-    fruit_lengths = [len(fruit) for fruit in fruits]  # Create a new list with the lengths of each fruit
+# Example 8: Sorting a list
+numbers = [5, 3, 8, 1, 2]
+numbers.sort()
+print("Sorted Numbers:", numbers)
 
-    # Output the results
-    print(f"First three fruits: {first_three_fruits}")
-    print(f"Last two fruits: {last_two_fruits}")
-    print(f"Lengths of each fruit: {fruit_lengths}")
+# Example 9: Reversing a list
+numbers.reverse()
+print("Reversed Numbers:", numbers)
 
-# 4. Advanced Operations on Lists
-def advanced_operations():
-    # Create a list of numbers
-    numbers = [1, 2, 3, 4, 5]
+# Example 10: List Comprehension
+squares = [x * x for x in range(6)]
+print("Squares:", squares)
 
-    # List comprehension with condition
-    squared_even_numbers = [x**2 for x in numbers if x % 2 == 0]  # Square only the even numbers
+# Example 11: Copying a list
+copy_fruits = fruits.copy()
+print("Copied List:", copy_fruits)
 
-    # Create a nested list (a list of lists)
-    nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# Example 12: Joining two lists
+combined = fruits + numbers
+print("Combined List:", combined)
 
-    # Accessing elements in a nested list
-    first_row = nested_list[0]  # First sublist
-    first_element_in_first_row = nested_list[0][0]  # First element in the first sublist
+# Example 13: Clearing a list
+fruits.clear()
+print("Cleared Fruits List:", fruits)
 
-    # Output the results
-    print(f"Original numbers: {numbers}")
-    print(f"Squared even numbers: {squared_even_numbers}")
-    print(f"Nested list: {nested_list}")
-    print(f"First row of nested list: {first_row}")
-    print(f"First element in the first row of nested list: {first_element_in_first_row}")
-
-
-# Example usage of the functions
-print("Introduction to Lists")
-introduction_to_lists()
-print("\nBasic Operations on Lists")
-basic_operations()
-print("\nIntermediate Operations on Lists")
-intermediate_operations()
-print("\nAdvanced Operations on Lists")
-advanced_operations()
+# Lists are powerful and flexible, making them an essential part of Python programming.
+# Practice creating and manipulating lists to become comfortable with them!
