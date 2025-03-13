@@ -1,99 +1,84 @@
-# Python Operators Tutorial with Outputs
+# Python Operators Explained for Beginners
 
-# ---------------------------
+# Operators are special symbols that perform operations on variables and values.
+# Python has several types of operators:
 # 1. Arithmetic Operators
-# ---------------------------
-
-print("Arithmetic Operators")
-a, b = 15, 4
-
-# Easy Example
-print("Addition:", a + b)  # Output: 19
-print("Subtraction:", a - b)  # Output: 11
-print("Multiplication:", a * b)  # Output: 60
-
-# Medium Example
-base = 5
-exponent = 3
-dividend = 20
-divisor = 6
-print("Exponentiation (5^3):", base ** exponent)  # Output: 125
-print("Remainder (20 % 6):", dividend % divisor)  # Output: 2
-
-# Hard Example
-num1 = 43
-num2 = 6
-floor_result = num1 // num2
-combined_result = (num1 + num2) * 2 - (num1 % num2)
-print("Floor Division:", floor_result)  # Output: 7
-print("Combined Result:", combined_result)  # Output: 94
-
-print("\n")  # Blank line for separation
-
-
-# ---------------------------
 # 2. Comparison Operators
-# ---------------------------
-
-print("Comparison Operators")
-x, y, z = 30, 20, 10
-
-# Easy Example
-print("Is x equal to y?", x == y)  # Output: False
-print("Is x greater than y?", x > y)  # Output: True
-
-# Medium Example
-print("Is x greater than y and y greater than z?", x > y > z)  # Output: True
-print("Is x not equal to z?", x != z)  # Output: True
-
-# Hard Example
-a, b, c = 15, 10, 20
-result = a > b and b < c and a + b < c
-print("Complex Comparison:", result)  # Output: True
-
-print("\n")  # Blank line for separation
-
-
-# ---------------------------
 # 3. Logical Operators
-# ---------------------------
+# 4. Bitwise Operators
+# 5. Assignment Operators
+# 6. Identity Operators
+# 7. Membership Operators
 
-print("Logical Operators")
-x, y = 10, 20
+# 1. Arithmetic Operators
+print("Arithmetic Operators:")
+a = 10
+b = 3
+print("Addition:", a + b)  # Output: 13
+print("Subtraction:", a - b)  # Output: 7
+print("Multiplication:", a * b)  # Output: 30
+print("Division:", a / b)  # Output: 3.3333333333333335
+print("Floor Division:", a // b)  # Output: 3
+print("Modulus:", a % b)  # Output: 1
+print("Exponentiation:", a ** b)  # Output: 1000
 
-# Easy Example
-print("Logical AND:", x < 15 and y > 15)  # Output: True
+# 2. Comparison Operators
+print("\nComparison Operators:")
+print("Equal:", a == b)  # Output: False
+print("Not Equal:", a != b)  # Output: True
+print("Greater Than:", a > b)  # Output: True
+print("Less Than:", a < b)  # Output: False
+print("Greater Than or Equal:", a >= b)  # Output: True
+print("Less Than or Equal:", a <= b)  # Output: False
 
-# Medium Example
-x, y = 5, 25
-print("Logical OR:", x > 10 or y > 10)  # Output: True
+# 3. Logical Operators
+print("\nLogical Operators:")
+x = True
+y = False
+print("AND:", x and y)  # Output: False
+print("OR:", x or y)  # Output: True
+print("NOT:", not x)  # Output: False
 
-# Hard Example
-a, b = 5, 15
-print("Logical NOT:", not (a > b))  # Output: True
+# 4. Bitwise Operators
+print("\nBitwise Operators:")
+c = 5  # Binary: 101
+d = 3  # Binary: 011
+print("AND:", c & d)  # Output: 1
+print("OR:", c | d)  # Output: 7
+print("XOR:", c ^ d)  # Output: 6
+print("NOT:", ~c)  # Output: -6
+print("Left Shift:", c << 1)  # Output: 10
+print("Right Shift:", c >> 1)  # Output: 2
 
-print("\n")  # Blank line for separation
+# 5. Assignment Operators
+print("\nAssignment Operators:")
+e = 5
+print("Assign:", e)  # Output: 5
+e += 3
+print("Add and Assign:", e)  # Output: 8
+e -= 2
+print("Subtract and Assign:", e)  # Output: 6
+e *= 4
+print("Multiply and Assign:", e)  # Output: 24
+e /= 2
+print("Divide and Assign:", e)  # Output: 12.0
+e %= 3
+print("Modulus and Assign:", e)  # Output: 0.0
+e **= 2
+print("Exponent and Assign:", e)  # Output: 0.0
+e //= 2
+print("Floor Divide and Assign:", e)  # Output: 0.0
 
+# 6. Identity Operators
+print("\nIdentity Operators:")
+print("Is Operator:", a is b)  # Output: False
+print("Is Not Operator:", a is not b)  # Output: True
 
-# ---------------------------
-# 4. Assignment Operators
-# ---------------------------
+# 7. Membership Operators
+print("\nMembership Operators:")
+list1 = [1, 2, 3, 4, 5]
+print("In Operator:", 3 in list1)  # Output: True
+print("Not In Operator:", 6 not in list1)  # Output: True
 
-print("Assignment Operators")
-
-# Easy Example
-x = 10
-x += 5  # Add 5 to x
-print("New value of x:", x)  # Output: 15
-
-# Medium Example
-y = 7
-y *= 3  # Multiply y by 3
-print("New value of y:", y)  # Output: 21
-
-# Hard Example
-z = 20
-z /= 4  # Divide by 4
-z += 10  # Add 10
-z *= 2   # Multiply by 2
-print("Final value of z:", z)  # Output: 40.0
+# Operators are essential for performing various operations and comparisons in Python.
+# Practice using different operators to get comfortable with their functionality!
