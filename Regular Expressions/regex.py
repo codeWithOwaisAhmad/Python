@@ -1,93 +1,94 @@
-"""
-Regular expressions (often abbreviated as regex or regexp) are sequences of characters that define search patterns. 
-These patterns are used to match strings or parts of strings. Regular expressions are incredibly powerful for text 
-processing tasks, such as searching, matching, and replacing text.
-"""
+# Python Regular Expressions Explained for Beginners (Detailed Version)
 
-# Importing the re module
+# What are Regular Expressions (RegEx)?
+# Regular expressions are sequences of characters that define search patterns.
+# They are used for pattern matching, searching, and text manipulation.
+# In Python, the 're' module provides support for working with regular expressions.
+
+# Why Use Regular Expressions?
+# Regular expressions are useful for tasks such as:
+# - Validating input (e.g., email addresses, phone numbers)
+# - Searching and extracting information from text
+# - Replacing or splitting text based on patterns
+
+# Importing the 're' Module
 import re
 
-# Basic Functions in the re Module
+# Example 1: Basic Pattern Matching
+print("\nExample 1: Basic Pattern Matching")
+text = "Hello, welcome to the world of Python!"
+pattern = r"Python"
 
-# 1. re.match(): This function tries to match a pattern at the beginning of a string.
-pattern = r'hello'
-string = 'hello world'
-
-match = re.match(pattern, string)
-
+# Using re.search() to find the pattern in the text
+match = re.search(pattern, text)
 if match:
-    print("Match found!")
+    print("Pattern found at position:", match.start())  # Output: Position of 'Python'
 else:
-    print("No match.")
+    print("Pattern not found")
 
-# 2. re.search(): This function searches the entire string for a match.
-pattern = r'world'
-string = 'hello world'
+# Example 2: Using Special Characters
+print("\nExample 2: Using Special Characters")
+text = "My phone number is 123-456-7890."
+pattern = r"\d{3}-\d{3}-\d{4}"
 
-search = re.search(pattern, string)
+# Using re.findall() to extract phone numbers
+phone_numbers = re.findall(pattern, text)
+print("Phone numbers found:", phone_numbers)  # Output: ['123-456-7890']
 
-if search:
-    print("Match found!")
-else:
-    print("No match.")
+# Example 3: Matching Multiple Patterns
+print("\nExample 3: Matching Multiple Patterns")
+text = "cat, bat, rat, mat"
+pattern = r"[cm]at"
 
-# 3. re.findall(): This function returns a list of all non-overlapping matches in the string.
-pattern = r'\d+'
-string = 'There are 123 apples and 456 oranges.'
+matches = re.findall(pattern, text)
+print("Words matching the pattern:", matches)  # Output: ['cat', 'mat']
 
-matches = re.findall(pattern, string)
-print(matches)  # Output: ['123', '456']
+# Example 4: Replacing Text Using re.sub()
+print("\nExample 4: Replacing Text")
+text = "I love coding in Python. Python is awesome!"
+pattern = r"Python"
 
-# 4. re.finditer(): This function returns an iterator yielding match objects for all non-overlapping matches.
-pattern = r'\d+'
-string = 'There are 123 apples and 456 oranges.'
+# Replace 'Python' with 'Programming'
+new_text = re.sub(pattern, "Programming", text)
+print("Modified text:", new_text)  # Output: 'I love coding in Programming. Programming is awesome!'
 
-matches = re.finditer(pattern, string)
+# Example 5: Splitting Strings Using re.split()
+print("\nExample 5: Splitting Strings")
+text = "apple, banana; orange: grape"
+pattern = r"[;, :]"
 
-for match in matches:
-    print(match.group())  # Output: 123 then 456
+# Split text using multiple delimiters
+fruits = re.split(pattern, text)
+print("Fruits:", fruits)  # Output: ['apple', 'banana', 'orange', 'grape']
 
-# 5. re.sub(): This function replaces occurrences of the pattern with a replacement string.
-pattern = r'apples'
-replacement = 'bananas'
-string = 'I like apples.'
+# Commonly Used Special Characters in Regular Expressions:
+# 1. \d - Matches any digit (0-9)
+# 2. \w - Matches any alphanumeric character (a-z, A-Z, 0-9, _)
+# 3. \s - Matches any whitespace character
+# 4. .  - Matches any character except a newline
+# 5. ^  - Matches the start of a string
+# 6. $  - Matches the end of a string
+# 7. *  - Matches zero or more occurrences of the preceding pattern
+# 8. +  - Matches one or more occurrences of the preceding pattern
+# 9. ?  - Matches zero or one occurrence of the preceding pattern
+# 10. {} - Specifies the number of repetitions
+# 11. [] - Matches any one of the characters inside the brackets
+# 12. |  - Alternation (logical OR)
+# 13. () - Groups patterns for capturing
 
-new_string = re.sub(pattern, replacement, string)
-print(new_string)  # Output: I like bananas.
+# Advantages of Regular Expressions:
+# 1. Efficient for searching and manipulating large amounts of text.
+# 2. Powerful for pattern matching and validation.
+# 3. Flexible with concise syntax.
 
-"""
-Metacharacters:
-Regular expressions use special characters (metacharacters) to define patterns:
-- . : Matches any character except a newline.
-- ^ : Matches the beginning of the string.
-- $ : Matches the end of the string.
-- * : Matches 0 or more repetitions of the preceding pattern.
-- + : Matches 1 or more repetitions of the preceding pattern.
-- ? : Matches 0 or 1 repetition of the preceding pattern.
-- {m,n} : Matches between m and n repetitions of the preceding pattern.
-- [] : Matches any single character within the brackets.
-- | : Acts as an OR operator.
-- () : Groups patterns.
-"""
+# Disadvantages of Regular Expressions:
+# 1. Syntax can be complex and hard to read.
+# 2. Difficult to debug if patterns are too complicated.
+# 3. Can be inefficient if not used properly.
 
-# Example Using Metacharacters
-pattern = r'\b\w{5}\b'
-string = 'Hello world, this is a regex example.'
+# Tips for Using Regular Expressions:
+# 1. Test your patterns on sample data to ensure accuracy.
+# 2. Use online tools like regex101 to visualize and test expressions.
+# 3. Comment your regex patterns for better readability.
 
-matches = re.findall(pattern, string)
-print(matches)  # Output: ['Hello', 'world']
-
-"""
-Escaping Metacharacters:
-If you want to match a metacharacter literally, you need to escape it with a backslash (\).
-"""
-
-pattern = r'\$100'
-string = 'The price is $100.'
-
-search = re.search(pattern, string)
-
-if search:
-    print("Match found!")
-else:
-    print("No match.")
+# Regular expressions are a powerful tool for string processing, but it is important to use them wisely and optimize your patterns to avoid performance issues.
