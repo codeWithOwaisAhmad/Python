@@ -1,73 +1,73 @@
-# Python Sets Tutorial
+# Python Sets Explained for Beginners (Detailed Version)
 
-# Easy Level Example: Creating and Using Sets
+# What are Sets in Python?
+# A set is an unordered collection of unique elements.
+# Sets do not allow duplicate values and are mutable, meaning elements can be added or removed.
+# Sets are defined using curly braces {} or the set() constructor.
 
-# Step 1: Create an empty set
-my_set = set()
-print("Initial empty set:", my_set)
+# Why Use Sets?
+# - To store unique values and eliminate duplicates.
+# - For efficient membership testing (checking if an element exists).
+# - To perform mathematical set operations like union, intersection, difference, and symmetric difference.
 
-# Step 2: Add elements to the set
-my_set.add(1)
-my_set.add(2)
-my_set.add(3)
-print("Set after adding elements:", my_set)
+# Creating a Set
+print("\nCreating Sets")
+set1 = {1, 2, 3, 4, 5}
+set2 = set([3, 4, 5, 6, 7])  # Using set() constructor
+print("Set 1:", set1)  # Output: {1, 2, 3, 4, 5}
+print("Set 2:", set2)  # Output: {3, 4, 5, 6, 7}
 
-# Step 3: Add duplicate elements (they will be ignored)
-my_set.add(2)
-print("Set after adding a duplicate element:", my_set)
+# Adding and Removing Elements
+print("\nAdding and Removing Elements")
+set1.add(6)  # Adding a single element
+print("After adding 6 to Set 1:", set1)  # Output: {1, 2, 3, 4, 5, 6}
+set1.update([7, 8, 9])  # Adding multiple elements
+print("After adding 7, 8, 9 to Set 1:", set1)  # Output: {1, 2, 3, 4, 5, 6, 7, 8, 9}
+set1.remove(3)  # Removing an element
+print("After removing 3 from Set 1:", set1)  # Output: {1, 2, 4, 5, 6, 7, 8, 9}
+set1.discard(10)  # No error if element not present
+print("After discarding 10 from Set 1:", set1)  # Output: {1, 2, 4, 5, 6, 7, 8, 9}
 
-# Step 4: Check if an element exists in the set
-print("Is 2 in the set?", 2 in my_set)
-print("Is 4 in the set?", 4 in my_set)
+# Mathematical Set Operations
+print("\nMathematical Set Operations")
 
-# Step 5: Remove an element from the set
-my_set.remove(2)
-print("Set after removing an element:", my_set)
+# Union: Combines elements from both sets (removes duplicates)
+union_set = set1.union(set2)
+print("Union of Set 1 and Set 2:", union_set)  # Output: {1, 2, 4, 5, 6, 7, 8, 9, 3}
 
+# Intersection: Elements common to both sets
+intersection_set = set1.intersection(set2)
+print("Intersection of Set 1 and Set 2:", intersection_set)  # Output: {4, 5, 6, 7}
 
-# Medium Level Example: Set Operations
+# Difference: Elements present in Set 1 but not in Set 2
+difference_set = set1.difference(set2)
+print("Difference of Set 1 - Set 2:", difference_set)  # Output: {1, 2, 8, 9}
 
-# Step 1: Create two sets
-set_a = {1, 2, 3, 4}
-set_b = {3, 4, 5, 6}
-print("Set A:", set_a)
-print("Set B:", set_b)
+# Symmetric Difference: Elements present in either of the sets, but not both
+symmetric_difference_set = set1.symmetric_difference(set2)
+print("Symmetric Difference of Set 1 and Set 2:", symmetric_difference_set)  # Output: {1, 2, 8, 9, 3}
 
-# Step 2: Perform union operation
-union_set = set_a.union(set_b)
-print("Union of A and B:", union_set)
+# Set Membership Testing
+print("\nSet Membership Testing")
+print("Is 4 in Set 1?:", 4 in set1)  # Output: True
+print("Is 10 in Set 1?:", 10 in set1)  # Output: False
 
-# Step 3: Perform intersection operation
-intersection_set = set_a.intersection(set_b)
-print("Intersection of A and B:", intersection_set)
+# Set Comprehension
+print("\nSet Comprehension")
+square_set = {x**2 for x in range(5)}
+print("Square Set:", square_set)  # Output: {0, 1, 4, 9, 16}
 
-# Step 4: Perform difference operations
-difference_set_a_b = set_a.difference(set_b)
-difference_set_b_a = set_b.difference(set_a)
-print("Difference (A - B):", difference_set_a_b)
-print("Difference (B - A):", difference_set_b_a)
+# Advantages of Sets:
+# 1. Fast membership testing (O(1) on average).
+# 2. Automatically removes duplicate values.
+# 3. Useful for mathematical operations.
 
+# Disadvantages of Sets:
+# 1. Unordered, so elements cannot be accessed by index.
+# 2. Cannot store duplicate items.
+# 3. Elements must be hashable (e.g., no lists or dictionaries within sets).
 
-# Hard Level Example: Set Comprehensions and Advanced Operations
-
-# Step 1: Create a set using set comprehension
-squared_set = {x**2 for x in range(1, 6)}
-print("Set of squares from 1 to 5:", squared_set)
-
-# Step 2: Create two new sets
-set_c = {1, 2, 3, 4, 5}
-set_d = {2, 4, 6, 8}
-print("Set C:", set_c)
-print("Set D:", set_d)
-
-# Step 3: Perform symmetric difference operation
-symmetric_difference_set = set_c.symmetric_difference(set_d)
-print("Symmetric Difference of C and D:", symmetric_difference_set)
-
-# Step 4: Check if one set is a subset of another
-is_subset = set_c.issubset(squared_set)
-print("Is Set C a subset of the squared set?", is_subset)
-
-# Step 5: Check if one set is a superset of another
-is_superset = set_d.issuperset({2, 4})
-print("Is Set D a superset of {2, 4}?", is_superset)
+# Tips for Using Sets:
+# 1. Use sets when you need unique values and efficient lookups.
+# 2. Utilize set operations for mathematical computations.
+# 3. Be cautious with mutable elements, as they are not allowed in sets.
