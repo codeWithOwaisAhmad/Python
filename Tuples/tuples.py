@@ -1,77 +1,74 @@
-def easy_example():
-    # Easy Example: Creating and Accessing Tuples
+# Python Tuples Explained for Beginners (Detailed Version)
 
-    # Step 1: Creating a tuple
-    my_tuple = (1, 2, 3, 4, 5)
+# What are Tuples in Python?
+# A tuple is an ordered, immutable collection of elements.
+# Tuples are defined using parentheses () and can contain elements of different data types.
+# Once a tuple is created, its elements cannot be changed, added, or removed.
 
-    # Step 2: Accessing elements in a tuple
-    first_element = my_tuple[0]
-    second_element = my_tuple[1]
+# Creating Tuples
+print("\nCreating Tuples")
+tuple1 = (1, 2, 3, 4, 5)
+tuple2 = ('apple', 'banana', 'cherry')
+tuple3 = (1, 'Hello', 3.14)
+tuple4 = ()  # Empty tuple
+tuple5 = (42,)  # Single element tuple (with a trailing comma)
+print("Tuple 1:", tuple1)  # Output: (1, 2, 3, 4, 5)
+print("Tuple 2:", tuple2)  # Output: ('apple', 'banana', 'cherry')
+print("Tuple 3:", tuple3)  # Output: (1, 'Hello', 3.14)
+print("Empty Tuple:", tuple4)  # Output: ()
+print("Single Element Tuple:", tuple5)  # Output: (42,)
 
-    # Step 3: Printing the elements
-    print("First Element:", first_element)
-    print("Second Element:", second_element)
+# Accessing Tuple Elements
+print("\nAccessing Tuple Elements")
+print("First element of tuple1:", tuple1[0])  # Output: 1
+print("Last element of tuple2:", tuple2[-1])  # Output: cherry
 
-    # Step 4: Tuple with mixed data types
-    mixed_tuple = (1, "Hello", 3.14)
-    print("Mixed Tuple:", mixed_tuple)
+# Slicing Tuples
+print("\nSlicing Tuples")
+sliced_tuple = tuple1[1:4]
+print("Sliced Tuple (1:4):", sliced_tuple)  # Output: (2, 3, 4)
 
-def medium_example():
-    # Medium Example: Tuple Operations and Methods
+# Tuple Length
+print("\nTuple Length")
+print("Length of tuple1:", len(tuple1))  # Output: 5
 
-    # Step 1: Creating a tuple
-    my_tuple = (10, 20, 30, 40, 50)
+# Concatenating Tuples
+print("\nConcatenating Tuples")
+tuple6 = tuple1 + tuple2
+print("Concatenated Tuple:", tuple6)  # Output: (1, 2, 3, 4, 5, 'apple', 'banana', 'cherry')
 
-    # Step 2: Slicing a tuple
-    slice_tuple = my_tuple[1:4]  # Slicing from index 1 to 3 (4 is excluded)
+# Repeating Tuples
+print("\nRepeating Tuples")
+tuple7 = ('Hi!',) * 3
+print("Repeated Tuple:", tuple7)  # Output: ('Hi!', 'Hi!', 'Hi!')
 
-    # Step 3: Finding the length of a tuple
-    tuple_length = len(my_tuple)
+# Checking Membership
+print("\nChecking Membership")
+print("'banana' in tuple2:", 'banana' in tuple2)  # Output: True
+print("'grape' in tuple2:", 'grape' in tuple2)  # Output: False
 
-    # Step 4: Concatenating tuples
-    another_tuple = (60, 70)
-    concatenated_tuple = my_tuple + another_tuple
+# Tuple Methods
+print("\nTuple Methods")
+tuple8 = (1, 2, 3, 2, 4, 2)
+print("Count of 2 in tuple8:", tuple8.count(2))  # Output: 3
+print("Index of 3 in tuple8:", tuple8.index(3))  # Output: 2
 
-    # Step 5: Checking for element existence
-    is_present = 30 in my_tuple
+# Unpacking Tuples
+print("\nUnpacking Tuples")
+a, b, c = tuple3
+print("a:", a)  # Output: 1
+print("b:", b)  # Output: Hello
+print("c:", c)  # Output: 3.14
 
-    # Step 6: Counting occurrences and finding index
-    count_of_30 = my_tuple.count(30)
-    index_of_40 = my_tuple.index(40)
+# Advantages of Tuples:
+# 1. Fast and efficient due to immutability.
+# 2. Can be used as dictionary keys and elements of sets.
+# 3. Useful for fixed data structures (e.g., coordinates).
 
-    # Step 7: Printing the results
-    print("Original Tuple:", my_tuple)
-    print("Sliced Tuple:", slice_tuple)
-    print("Length of Tuple:", tuple_length)
-    print("Concatenated Tuple:", concatenated_tuple)
-    print("Is 30 present in tuple?", is_present)
-    print("Count of 30:", count_of_30)
-    print("Index of 40:", index_of_40)
+# Disadvantages of Tuples:
+# 1. Cannot be modified after creation.
+# 2. Lack of flexibility compared to lists.
 
-def hard_example():
-    # Hard Example: Nested Tuples and Tuple Unpacking
-
-    # Step 1: Creating nested tuples
-    nested_tuple = ((1, 2), (3, 4), (5, 6))
-
-    # Step 2: Accessing elements in nested tuples
-    first_inner_tuple = nested_tuple[0]
-    first_element_of_second_tuple = nested_tuple[1][0]
-
-    # Step 3: Tuple unpacking
-    a, b, c = nested_tuple
-
-    # Step 4: Unpacking inner tuples
-    (x1, y1), (x2, y2), (x3, y3) = nested_tuple
-
-    # Step 5: Printing the results
-    print("Nested Tuple:", nested_tuple)
-    print("First Inner Tuple:", first_inner_tuple)
-    print("First Element of Second Tuple:", first_element_of_second_tuple)
-    print("Unpacked Tuples:", a, b, c)
-    print("Unpacked Inner Tuples:", (x1, y1), (x2, y2), (x3, y3))
-
-# Run examples
-easy_example()
-medium_example()
-hard_example()
+# Tips for Using Tuples:
+# 1. Use tuples for fixed data that shouldn't change.
+# 2. Use lists if you need to modify the data frequently.
