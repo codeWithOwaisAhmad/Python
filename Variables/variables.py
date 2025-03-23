@@ -1,99 +1,68 @@
-# Variables in Python
+# Python Variables Explained for Beginners (Detailed Version)
 
-# 1. Introduction to Variables
-# Variables are used to store data that can be used later in the program.
-# In Python, you don't need to declare the type of variable explicitly.
+# What are Variables in Python?
+# Variables are used to store data that can be used and manipulated later in the program.
+# In Python, variables do not need explicit declaration. They are created when you assign a value to them.
 
-# Example of variable assignment
-x = 10  # Integer
-y = 3.14  # Float
-name = "Alice"  # String
-is_active = True  # Boolean
+# Variable Naming Rules:
+# 1. Must start with a letter (a-z, A-Z) or underscore (_)
+# 2. Cannot start with a number
+# 3. Can contain letters, numbers, and underscores
+# 4. Variable names are case-sensitive (age and Age are different)
 
-# 2. Naming Rules
-# Variable names must start with a letter or an underscore
-# and can only contain alphanumeric characters and underscores.
+# Creating Variables
+print("\nCreating Variables")
+x = 5
+name = "John"
+salary = 2500.50
+is_student = True
+print("x:", x)  # Output: 5
+print("name:", name)  # Output: John
+print("salary:", salary)  # Output: 2500.5
+print("is_student:", is_student)  # Output: True
 
-# Valid variable names
-age = 25
-_address = "123 Main St"
+# Multiple Assignment
+print("\nMultiple Assignment")
+a, b, c = 10, 20, 30
+print("a:", a)  # Output: 10
+print("b:", b)  # Output: 20
+print("c:", c)  # Output: 30
 
-# Invalid variable names
-# 2nd_place = "Second"  # SyntaxError: invalid syntax
-# first-place = 1  # SyntaxError: invalid syntax
+# Assigning the Same Value to Multiple Variables
+print("\nSame Value to Multiple Variables")
+p = q = r = 100
+print("p:", p)  # Output: 100
+print("q:", q)  # Output: 100
+print("r:", r)  # Output: 100
 
-# 3. Reassigning Variables
-# Variables can be reassigned to different values or types.
+# Changing Variable Values
+print("\nChanging Variable Values")
+age = 18
+print("Original age:", age)  # Output: 18
+age = 21
+print("Updated age:", age)  # Output: 21
 
-# Initial assignment
-count = 100
-print(count)  # Output: 100
+# Variable Types
+print("\nVariable Types")
+print("Type of x:", type(x))  # Output: <class 'int'>
+print("Type of name:", type(name))  # Output: <class 'str'>
+print("Type of salary:", type(salary))  # Output: <class 'float'>
+print("Type of is_student:", type(is_student))  # Output: <class 'bool'>
 
-# Reassignment
-count = 50
-print(count)  # Output: 50
-
-# Different type
-count = "fifty"
-print(count)  # Output: fifty
-
-# 4. Multiple Assignments
-# You can assign multiple variables at once.
-
-a, b, c = 1, 2, 3
-print(a, b, c)  # Output: 1 2 3
-
-# 5. Constants
-# In Python, constants are usually defined using uppercase letters.
-# Note that Python does not enforce constant values, this is just a convention.
-
-PI = 3.14159
-GRAVITY = 9.8
-
-# 6. Data Types
-# Common data types in Python include integers, floats, strings, and booleans.
-
-# Integer
-num = 10
-
-# Float
-height = 5.8
-
-# String
-city = "New York"
-
-# Boolean
-is_open = False
-
-# 7. Type Conversion
-# You can convert between different data types using functions like int(), float(), str(), and bool().
-
-# Convert float to integer
-num = 3.75
-num = int(num)
-print(num)  # Output: 3
-
-# Convert integer to string
-age = 25
-age_str = str(age)
-print(age_str)  # Output: "25"
-
-# Convert string to float
-price = "9.99"
-price = float(price)
-print(price)  # Output: 9.99
-
-# 8. Checking Variable Types
-# You can use the type() function to check the type of a variable.
-
-print(type(x))  # Output: <class 'int'>
-print(type(y))  # Output: <class 'float'>
-print(type(name))  # Output: <class 'str'>
-print(type(is_active))  # Output: <class 'bool'>
-
-# 9. Deleting Variables
-# You can delete variables using the del statement.
-
+# Deleting Variables
+print("\nDeleting Variables")
 del x
-# print(x)  # This will raise an error because x is deleted.
+try:
+    print(x)  # This will raise an error since x is deleted
+except NameError:
+    print("Variable 'x' is not defined.")
 
+# Advantages of Using Variables:
+# 1. Makes code readable and maintainable.
+# 2. Reduces redundancy by storing reusable values.
+# 3. Enables dynamic changes in data without altering the entire code.
+
+# Tips for Using Variables:
+# 1. Use meaningful names that reflect the purpose of the variable.
+# 2. Avoid using reserved keywords as variable names.
+# 3. Follow a consistent naming convention (e.g., snake_case or camelCase).
