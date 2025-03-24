@@ -1,66 +1,84 @@
-# Python Tutorial on While Loop
+# Python While Loop Explained for Beginners (Detailed Version)
 
-# Easy Example: Simple Countdown
+# What is a While Loop?
+# A while loop repeatedly executes a block of code as long as a given condition is true.
+# It is used when the number of iterations is not known beforehand.
 
-# Initialize the counter
-counter = 5
+# Syntax of a While Loop:
+# while condition:
+#     statement(s)
 
-# While loop to print countdown from 5 to 1
-while counter > 0:
-    print("Counter:", counter)
-    counter -= 1
-
-print("Liftoff!")
-
+# Example 1: Basic While Loop
+print("\nBasic While Loop:")
+count = 1
+while count <= 5:
+    print("Count:", count)
+    count += 1  # Increment the counter
 # Output:
-# Counter: 5
-# Counter: 4
-# Counter: 3
-# Counter: 2
-# Counter: 1
-# Liftoff!
+# Count: 1
+# Count: 2
+# Count: 3
+# Count: 4
+# Count: 5
 
-# Medium Example: Summing Numbers
+# Example 2: Sum of First 10 Natural Numbers
+print("\nSum of First 10 Natural Numbers:")
+sum = 0
+num = 1
+while num <= 10:
+    sum += num
+    num += 1
+print("Sum:", sum)  # Output: 55
 
-# Initialize the sum and counter
-total_sum = 0
-number = 1
+# Example 3: Using Break to Exit the Loop
+print("\nUsing Break to Exit the Loop:")
+count = 0
+while True:
+    print("Infinite Loop Count:", count)
+    count += 1
+    if count == 3:
+        print("Breaking the loop!")
+        break
+# Output:
+# Infinite Loop Count: 0
+# Infinite Loop Count: 1
+# Infinite Loop Count: 2
+# Breaking the loop!
 
-# While loop to calculate the sum of numbers from 1 to 10
-while number <= 10:
-    total_sum += number
+# Example 4: Using Continue to Skip Iteration
+print("\nUsing Continue to Skip Iteration:")
+number = 0
+while number < 5:
     number += 1
-
-print("The sum of numbers from 1 to 10 is:", total_sum)
-
+    if number == 3:
+        print("Skipping number 3!")
+        continue
+    print("Number:", number)
 # Output:
-# The sum of numbers from 1 to 10 is: 55
+# Number: 1
+# Number: 2
+# Skipping number 3!
+# Number: 4
+# Number: 5
 
-# Hard Example: Finding the First N Prime Numbers
-
-# Function to check if a number is prime
-def is_prime(n):
-    if n <= 1:
-        return False
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-    return True
-
-# Initialize variables
-num_primes = 0
-number = 2
-N = 10  # Find the first 10 prime numbers
-prime_numbers = []
-
-# While loop to find the first N prime numbers
-while num_primes < N:
-    if is_prime(number):
-        prime_numbers.append(number)
-        num_primes += 1
-    number += 1
-
-print("The first", N, "prime numbers are:", prime_numbers)
-
+# Example 5: Nested While Loop
+print("\nNested While Loop:")
+i = 1
+while i <= 3:
+    j = 1
+    while j <= 2:
+        print(f"i={i}, j={j}")
+        j += 1
+    i += 1
 # Output:
-# The first 10 prime numbers are: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+# i=1, j=1
+# i=1, j=2
+# i=2, j=1
+# i=2, j=2
+# i=3, j=1
+# i=3, j=2
+
+# Important Tips:
+# 1. Make sure to update the counter to avoid infinite loops.
+# 2. Use break and continue wisely for better control.
+# 3. Nested while loops can make code complex and harder to debug.
