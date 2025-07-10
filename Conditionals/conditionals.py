@@ -1,4 +1,3 @@
-# Python Conditionals Explained for Beginners
 
 # Conditionals allow your program to make decisions based on conditions.
 # The main conditional statements in Python are: if, elif, and else.
