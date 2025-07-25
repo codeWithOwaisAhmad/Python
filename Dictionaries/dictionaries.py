@@ -3,7 +3,7 @@
 # A dictionary in Python is a collection of key-value pairs.
 # It is unordered, mutable, and does not allow duplicate keys.
 
-# Example 1: Creating a dictionary
+# Example 1: Creating a dictionarya
 person = {"name": "Alice", "age": 25, "city": "New York"}
 print("Dictionary:", person)
 print("Type:", type(person))
