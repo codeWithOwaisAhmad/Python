@@ -47,3 +47,4 @@ print("Complex Number:", num_complex, "| Type:", type(num_complex))
 # You can use the type() function to check the datatype of any variable.
 
 # Try modifying the values and observe how Python handles different datatypes!
+
