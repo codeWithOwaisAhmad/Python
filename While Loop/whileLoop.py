@@ -82,3 +82,4 @@ while i <= 3:
 # 1. Make sure to update the counter to avoid infinite loops.
 # 2. Use break and continue wisely for better control.
 # 3. Nested while loops can make code complex and harder to debug.
+
